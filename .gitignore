@@ -1,0 +1,39 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.crt
+
+# JavaScript dependencies and generated builds
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Python environments, caches, and generated model artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+ml/artifacts/*.joblib
+ml/artifacts/*.pkl
+ml/artifacts/*.pickle
+
+# Local service data and runtime files
+postgres-data/
+data/
+*.log
+*.pid
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

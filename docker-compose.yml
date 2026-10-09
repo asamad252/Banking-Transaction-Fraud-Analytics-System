@@ -1,0 +1,17 @@
+# Starts PostgreSQL only, with the schema and demo data loaded on first run.
+#   docker compose up -d
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ledger
+      POSTGRES_PASSWORD: ledger
+      POSTGRES_DB: ledgerlens
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+      - ledgerlens-data:/var/lib/postgresql/data
+volumes:
+  ledgerlens-data:
